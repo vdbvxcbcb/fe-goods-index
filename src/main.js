@@ -8,7 +8,7 @@ import {
   NavBar, 
   Search,
   Swipe,
-  SwipeItem  
+  SwipeItem
 } from 'vant';
 
 Vue.use(Tabbar);

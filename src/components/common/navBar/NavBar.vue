@@ -14,6 +14,8 @@
 
 <style scoped>
   .nav-bar {
+    position: relative;
+    z-index: 1;
     display: flex;
     height: 100px;
     line-height: 100px;

@@ -1,46 +1,73 @@
 <template>
   <div class="home-wrapper">
-    <nav-bar class="nav">
-      <div slot="center">订货无忧</div>
-    </nav-bar>
-    <div class="search-wrapper">
-      <van-search
-        v-model="value"
-        shape="round"
-        :left-icon="searchImage"
-        show-action
-        placeholder="搜索商品名称"
-        background="#f45c6d"
-      >
-        <template #action>
-          <van-icon :name="messageImage" size="20" badge="2" />
-        </template>
-      </van-search>
+    <div class="top">
+      <nav-bar class="nav">
+        <div slot="center">订货无忧</div>
+      </nav-bar>
     </div>
-    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white" @change="onChange">
-      <van-swipe-item v-for="(image, index) in swipeImages" :key="index">
-        <img :src="image"/>
-      </van-swipe-item>
-      <template #indicator>
-        <ul class="indicators indicator">
-          <li
-            v-for="(item, index) in swipeImages"
-            :key="index"
-            :class="{ active: checkActive(index) }"
-          ></li>
-        </ul>
-      </template>
-    </van-swipe>
+    <scroll class="content">
+      <div class="color-wrapper">
+        <div class="search-wrapper">
+          <van-search
+            v-model="value"
+            shape="round"
+            :left-icon="searchImage"
+            show-action
+            placeholder="搜索商品名称"
+            background="#f45c6d"
+          >
+            <template #action>
+              <van-icon :name="messageImage" size="20" badge="2" />
+            </template>
+          </van-search>
+        </div>
+        <van-swipe
+         class="my-swipe"
+         :autoplay="3000"
+         indicator-color="white"
+         @change="onChange"
+        >
+         <van-swipe-item v-for="(image, index) in swipeImages" :key="index">
+           <img :src="image" />
+         </van-swipe-item>
+         <template #indicator>
+           <ul class="indicators">
+             <li
+               v-for="(item, index) in swipeImages"
+               :key="index"
+               :class="{ active: checkActive(index) }"
+             ></li>
+           </ul>
+         </template>
+        </van-swipe>
+      </div>
+      <div class="bottom">
+        <activity-nav/>
+        <discount-limit/>
+        <hot-product/>
+      </div> 
+    </scroll>
+     <cart/>
   </div>
 </template>
 
 <script>
+import Scroll from "common/scroll/Scroll";
 import NavBar from "common/navBar/NavBar";
+import ActivityNav from "./components/ActivityNav";
+import DiscountLimit from "./components/DiscountLimit";
+import HotProduct from "./components/HotProduct";
+import Cart from "./components/Cart";
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Home",
   components: {
     NavBar,
+    ActivityNav,
+    DiscountLimit,
+    HotProduct,
+    Scroll,
+    Cart
   },
   data() {
     return {
@@ -61,15 +88,29 @@ export default {
       this.current = index;
     },
     checkActive(index) {
-      return index === this.current;// current为监听的轮播index
+      return index === this.current; // current为监听的轮播index
     },
-  }
+  },
 };
 </script>
 
 <style lang="less" scoped>
+.top, .color-wrapper {
+  background: rgb(244, 92, 109);
+}
+.content {
+  position: absolute;
+  top: 100px;
+  bottom: 100px;
+  left: 0;
+  right: 0; 
+}
+.bottom {
+  background: #f4f5f8;
+  padding: 30px 30px 32px 30px;
+}
 .search-wrapper {
-  background: #f45c6d;
+  background: rgb(244, 92, 109);
 }
 .my-swipe {
   .van-swipe-item {
@@ -79,7 +120,7 @@ export default {
       height: 100%;
     }
   }
-} 
+}
 .indicators {
   position: absolute;
   bottom: 22px;
@@ -90,7 +131,7 @@ export default {
   transform: translateX(-50%);
 }
 
-.indicator li {
+.indicators li {
   display: inline-block;
   width: 8px;
   height: 8px;
