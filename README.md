@@ -1,24 +1,13 @@
 # fe-goods-index
 
-## Project setup
+node 版本用的是 14.17，首页基本完成，项目启动后刷新一下
+
+## 安装
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 启动项目，本地演示
 ```
 yarn serve
 ```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
