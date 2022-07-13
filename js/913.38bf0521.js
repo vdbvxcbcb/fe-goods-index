@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkfe_goods_index"]=self["webpackChunkfe_goods_index"]||[]).push([[913],{2913:function(e,n,u){u.r(n),u.d(n,{default:function(){return l}});var r=function(){var e=this,n=e._self._c;return n("div",[e._v(" 订单 ")])},s=[],t={name:"Order"},f=t,d=u(1001),i=(0,d.Z)(f,r,s,!1,null,"464a1b15",null),l=i.exports}}]);
+//# sourceMappingURL=913.38bf0521.js.map

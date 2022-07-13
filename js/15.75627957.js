@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkfe_goods_index"]=self["webpackChunkfe_goods_index"]||[]).push([[15],{9015:function(e,n,u){u.r(n),u.d(n,{default:function(){return o}});var f=function(){var e=this,n=e._self._c;return n("div",[e._v(" 我的 ")])},r=[],s={name:"Profile"},t=s,i=u(1001),l=(0,i.Z)(t,f,r,!1,null,"7fb4167c",null),o=l.exports}}]);
+//# sourceMappingURL=15.75627957.js.map

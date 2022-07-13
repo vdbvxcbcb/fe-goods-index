@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkfe_goods_index"]=self["webpackChunkfe_goods_index"]||[]).push([[522],{2522:function(e,n,u){u.r(n),u.d(n,{default:function(){return l}});var t=function(){var e=this,n=e._self._c;return n("div",[e._v(" 分类 ")])},r=[],s={name:"Category"},f=s,o=u(1001),i=(0,o.Z)(f,t,r,!1,null,"021534eb",null),l=i.exports}}]);
+//# sourceMappingURL=522.edd82ac1.js.map
